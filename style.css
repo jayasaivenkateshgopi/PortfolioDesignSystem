@@ -1,0 +1,260 @@
+ /* --- GLOBAL VARIABLES (Geometric Theme) --- */
+ :root {
+  /* Slate-50 background */
+  --bg-primary: #f8fafc;
+  /* Slate-800 text */
+  --text-primary: #1e293b;
+  /* Slate-600 secondary */
+  --text-secondary: #475569;
+  /* Slate-300 border */
+  --border-color: #cbd5e1;
+  /* Blue-600 accent */
+  --accent-color: #2563eb;
+
+  /* Monospace for the "Technical/Blueprint" look */
+  --font-heading: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+  --font-body: system-ui, -apple-system, sans-serif;
+}
+
+/* --- BASE STYLES --- */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+
+  /* Geometric Dot Pattern */
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* --- UTILITY COMPONENTS --- */
+.text-heading-xl {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.text-heading-lg {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.text-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Geometric Buttons: Sharp corners, drop shadow effect */
+.btn-primary-custom {
+  background-color: var(--text-primary);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0;
+  border: none;
+  box-shadow: 4px 4px 0px var(--accent-color);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-primary-custom:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--accent-color);
+  color: #fff;
+}
+
+.btn-outline-custom {
+  background-color: #fff;
+  color: var(--text-primary);
+  padding: 1rem 2rem;
+  border-radius: 0;
+  border: 2px solid var(--text-primary);
+  transition: all 0.2s ease;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--text-primary);
+  color: #fff;
+}
+
+/* --- COMPONENT: NAV --- */
+.navbar-custom {
+  background-color: rgba(248, 250, 252, 0.95);
+  backdrop-filter: blur(5px);
+  border-bottom: 2px dashed var(--border-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.nav-link-custom {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+  margin-left: 2rem;
+}
+
+.nav-link-custom:hover {
+  color: var(--accent-color) !important;
+}
+
+/* --- COMPONENT: HERO --- */
+.section-hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: #fff;
+  border: 1px solid var(--text-primary);
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* --- COMPONENT: SKILLS --- */
+.skill-box {
+  background: #fff;
+  border: 2px solid var(--border-color);
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+/* Dashed border interaction for skills */
+.skill-box:hover {
+  border-color: var(--accent-color);
+  border-style: dashed;
+  transform: scale(1.02);
+}
+
+.skill-icon {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+/* --- COMPONENT: PROJECT CARD --- */
+.project-card {
+  border: 2px solid var(--text-primary);
+  background: #fff;
+  padding: 2rem;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  border-radius: 0; /* Sharp corners */
+}
+
+.project-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px var(--border-color);
+}
+
+.project-year {
+  font-family: var(--font-heading);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 1rem;
+}
+
+/* --- COMPONENT: SERVICE LIST --- */
+.service-item {
+  border-top: 2px dashed var(--border-color);
+  padding: 2.5rem 0;
+  transition: background-color 0.3s;
+}
+.service-item:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.service-number {
+  font-family: var(--font-heading);
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* --- COMPONENT: PROCESS --- */
+.process-step {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--border-color);
+  line-height: 1;
+}
+
+/* --- COMPONENT: CONTACT --- */
+.contact-email {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  background: #fff;
+  padding: 1rem 2rem;
+  border: 2px dashed var(--text-primary);
+  display: inline-block;
+  transition: all 0.2s;
+}
+.contact-email:hover {
+  background-color: var(--text-primary);
+  color: #fff;
+  border-style: solid;
+}
+
+/* --- UTILS --- */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.border-top-custom {
+  border-top: 2px dashed var(--border-color);
+}
+.accent-text {
+  color: var(--accent-color);
+}
+
+/* Specific font overrides for body text to keep it readable */
+p.lead,
+p.text-secondary {
+  font-family: var(--font-body);
+}
